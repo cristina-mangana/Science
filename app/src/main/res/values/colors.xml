@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0C1014</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryLight">#33363A</color>
+    <color name="colorAccent">#FF4181</color>
+    <color name="colorAccentDark">#C60055</color>
+    <color name="colorAccentLight">#FF7AB0</color>
+
+    <!-- Topics colors-->
+    <color name="colorTopicNature">@color/colorAccent</color>
+    <color name="colorTopicMaths">#2595B2</color>
+    <color name="colorTopicComputers">#FEDF66</color>
+    <color name="colorTopicGadgets">#79E59B</color>
+</resources>

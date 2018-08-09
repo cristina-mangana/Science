@@ -1,0 +1,9 @@
+<resources>
+    <!-- App name-->
+    <string name="app_name" translatable="false">Science!</string>
+
+    <!-- Facebook application ID and custom URL scheme-->
+    <string name="facebook_app_id">303503253558569</string>
+    <string name="fb_login_protocol_scheme">fb303503253558569</string>
+
+</resources>

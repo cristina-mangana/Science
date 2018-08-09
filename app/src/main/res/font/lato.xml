@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--normal-->
+    <font
+        app:font="@font/Lato_Regular"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+    <!--bold-->
+    <font
+        app:font="@font/Lato_Bold"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+</font-family>

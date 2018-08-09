@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "28642910361",
+    "firebase_url": "https://science-15123.firebaseio.com",
+    "project_id": "science-15123",
+    "storage_bucket": "science-15123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:28642910361:android:61538e8c8003b522",
+        "android_client_info": {
+          "package_name": "com.example.android.science"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "28642910361-qsv4ia5p8kppgn1suepislhmfe550pq1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.science",
+            "certificate_hash": "da17515e0618b3ae28f1030878ab1703d58efa0a"
+          }
+        },
+        {
+          "client_id": "28642910361-fq6sdq9btspnum02p79cgvpocflfks2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv4aS85dNJk2NgHkRaQEzlmG0UWaCBADg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "28642910361-fq6sdq9btspnum02p79cgvpocflfks2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
