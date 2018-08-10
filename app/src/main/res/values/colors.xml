@@ -8,8 +8,19 @@
     <color name="colorAccentLight">#FF7AB0</color>
 
     <!-- Topics colors-->
-    <color name="colorTopicNature">@color/colorAccent</color>
+    <color name="colorTopicGeneral">@color/colorAccent</color>
     <color name="colorTopicMaths">#2595B2</color>
     <color name="colorTopicComputers">#FEDF66</color>
-    <color name="colorTopicGadgets">#79E59B</color>
+    <color name="colorTopicAnimals">#79E59B</color>
+
+    <color name="transparentLight">#CCFF7AB0</color>
+    <color name="transparentDark">#CCC60055</color>
+
+    <!-- Text colors-->
+    <color name="primaryLightText">#FFFFFF</color>
+    <color name="secondaryLightText">#B3FFFFFF</color>
+    <color name="hintLightText">#80FFFFFF</color>
+    <color name="primaryDarkText">#D9000000</color>
+    <color name="secondaryDarkText">#CC000000</color>
+    <color name="hintDarkText">#66000000</color>
 </resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topic_card"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/marginSmall"
+    app:cardCornerRadius="@dimen/corner_radius"
+    tools:cardBackgroundColor="@color/colorTopicGeneral">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/marginBig">
+
+        <ImageView
+            android:id="@+id/iv_topic_image"
+            android:layout_width="@dimen/topic_icon_size"
+            android:layout_height="@dimen/topic_icon_size"
+            android:contentDescription="@string/topic_image_ct"
+            tools:src="@drawable/ic_general" />
+
+        <TextView
+            android:id="@+id/tv_topic_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/secondaryDarkText"
+            android:textStyle="bold"
+            app:autoSizeMaxTextSize="@dimen/title_textSize"
+            app:autoSizeTextType="uniform"
+            tools:text="@string/general_label" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

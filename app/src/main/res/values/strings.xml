@@ -6,4 +6,110 @@
     <string name="facebook_app_id">303503253558569</string>
     <string name="fb_login_protocol_scheme">fb303503253558569</string>
 
+    <!-- MAIN ACTIVITY -->
+    <!-- Choose a topic message [CHAR LIMIT = NONE]-->
+    <string name="choose_topic">Choose a \nTOPIC</string>
+    <!-- Profile section label [CHAR LIMIT = NONE]-->
+    <string name="profile_label">Your profile</string>
+
+    <!-- TOPICS NAMES [CHAR LIMIT = 30]-->
+    <string name="general_label">General</string>
+    <string name="maths_label">Maths</string>
+    <string name="computers_label">Computers</string>
+    <string name="animals_label">Animals</string>
+
+    <!-- TOPICS SUBTITLES [CHAR LIMIT = 40]-->
+    <string name="general_subtitle">Sodium Sodium Sodium&#8230; Batman!</string>
+    <string name="maths_subtitle">Become a root Master!</string>
+    <string name="computers_subtitle">&lt;div&gt;Q: How do you annoy a web developer?&lt;/span&gt;</string>
+    <string name="animals_subtitle">Where do orcas hear music? Orca-stras!</string>
+
+    <!-- DIFFICULTY LEVELS [CHAR LIMIT = 15]-->
+    <string name="easy_level">easy</string>
+    <string name="medium_level">medium</string>
+    <string name="hard_level">hard</string>
+
+    <!-- BUTTONS [CHAR LIMIT = 15]-->
+    <string name="play_button">Play</string>
+    <string name="share_button">Share</string>
+    <string name="play_again_button">Play again</string>
+
+    <!-- QUESTION ACTIVITY -->
+    <!-- Number of questions text -->
+    <string name="questions_number_text" translatable="false">
+        <xliff.g example="1" id="current_question">%s</xliff.g>/
+        <xliff.g example="10" id="total_questions">%s</xliff.g></string>
+
+    <!-- Error text [CHAR LIMIT = NONE]-->
+    <string name="error">Oops! It seems that an error has occurred. Please check your Internet
+    connection and come back in a while</string>
+
+    <!-- RESULTS ACTIVITY -->
+    <!-- Finish message [CHAR LIMIT = NONE]-->
+    <string name="finish">You finished!</string>
+    <!-- Score label [CHAR LIMIT = 30]-->
+    <string name="score">Your score:</string>
+    <!-- Correct answers label [CHAR LIMIT = 15]-->
+    <string name="correct_label">Correct</string>
+    <!-- Time left label [CHAR LIMIT = 15]-->
+    <string name="time_label">Time left</string>
+    <!-- Points label [CHAR LIMIT = 15]-->
+    <string name="points_label">Points</string>
+
+    <!-- PROFILE ACTIVITY -->
+    <!-- Games label [CHAR LIMIT = 15]-->
+    <string name="games_label">Games</string>
+    <!-- Incorrect answers label [CHAR LIMIT = 15]-->
+    <string name="incorrect_label">Incorrect</string>
+    <!-- Stats label [CHAR LIMIT = 20]-->
+    <string name="stats_label">Stats</string>
+    <!-- Topics label [CHAR LIMIT = 20]-->
+    <string name="topics_label">Topics</string>
+    <!-- Badges label [CHAR LIMIT = 20]-->
+    <string name="badges_label">Badges</string>
+    <!-- No data message [CHAR LIMIT = NONE]-->
+    <string name="no_data">Play a game to start developing your scientific skills!</string>
+    <!-- No badges message [CHAR LIMIT = NONE]-->
+    <string name="no_badges">You do not have any badges yet</string>
+
+    <!-- PLACEHOLDERS -->
+    <!-- Question placeholder -->
+    <string name="question_placeholder" translatable="false">How many zeros are there in a
+        googol?</string>
+    <!-- Answer placeholder -->
+    <string name="answer_placeholder" translatable="false">100</string>
+    <!-- Percentage placeholder -->
+    <string name="percentage_placeholder" translatable="false">60%</string>
+    <!-- Number of correct answer placeholder -->
+    <string name="correct_placeholder" translatable="false">6/10</string>
+    <!-- Time left placeholder -->
+    <string name="time_placeholder" translatable="false">00:32</string>
+    <!-- Points achieved placeholder -->
+    <string name="points_placeholder" translatable="false">120</string>
+    <!-- User name placeholder -->
+    <string name="name_placeholder" translatable="false">Alfred Einstein</string>
+    <!-- User nickname placeholder -->
+    <string name="nickname_placeholder" translatable="false">Ada Lovelace
+        great-great-grandson</string>
+
+    <!-- CONTENT DESCRIPTION -->
+    <!-- Topic image content description [CHAR LIMIT = NONE]-->
+    <string name="topic_image_ct">Image depicting the current topic</string>
+    <!-- Profile picture content description [CHAR LIMIT = NONE]-->
+    <string name="profile_picture_ct">Profile picture</string>
+    <!-- Pie chart content description [CHAR LIMIT = NONE]-->
+    <string name="pie_chart_ct">Pie chart showing the user stats</string>
+    <!-- Close button content description [CHAR LIMIT = NONE]-->
+    <string name="close_button_ct">Close button</string>
+    <!-- Stats progress bar content description [CHAR LIMIT = NONE]-->
+    <string name="stats_bar_ct">Progress bar showing the user stats</string>
+    <!-- Close button content description [CHAR LIMIT = NONE]-->
+    <string name="time_bar_ct">Progress bar showing the remaining time</string>
+    <!-- Results chart content description [CHAR LIMIT = NONE]-->
+    <string name="results_chart_ct">Chart showing the user results in percentage</string>
+    <!-- Badge content description [CHAR LIMIT = NONE]-->
+    <string name="badge_ct">Badge image</string>
+
+    <!--ACTION BUTTON TITLES-->
+    <string name="action_settings">Settings</string>
 </resources>

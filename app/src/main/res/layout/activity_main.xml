@@ -3,11 +3,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/choose_topic"
+        android:textColor="@color/primaryLightText"
+        android:textSize="@dimen/headline_textSize" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_topics_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/marginBig"
+        android:layout_marginEnd="@dimen/marginSmall"
+        android:layout_marginStart="@dimen/marginSmall"
+        android:layout_marginTop="@dimen/marginBig"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tv_profile_access"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="@dimen/marginBig"
+        android:layout_marginStart="@dimen/marginBig"
+        android:background="@drawable/profile_access_background"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/marginMedium"
+        android:text="@string/profile_label"
+        android:textAllCaps="true"
+        android:textColor="@color/primaryDarkText"
+        android:textSize="@dimen/title_textSize"
+        android:textStyle="bold" />
 </LinearLayout>

@@ -6,6 +6,89 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:fontFamily">@font/glacial_indifference</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Design.CoordinatorLayout</item>
     </style>
 
+    <!-- Style for the results summary text-->
+    <style name="summaryTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:textColor">@color/primaryLightText</item>
+        <item name="android:textSize">@dimen/display_textSize</item>
+    </style>
+
+    <!-- Style for the results summary - Labels-->
+    <style name="summaryLabelStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorAccentLight</item>
+        <item name="android:textSize">@dimen/body_textSize</item>
+    </style>
+
+    <!-- Style for the results summary layout on the profile section-->
+    <style name="summaryLayoutProfileStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/marginMini</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Style for the results summary text on the profile section-->
+    <style name="summaryTextStyle_profile" parent="summaryTextStyle">
+        <item name="android:textColor">@color/primaryDarkText</item>
+        <item name="android:textSize">@dimen/body_textSize</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <!-- Style for the results summary on the profile section - Labels-->
+    <style name="summaryLabelStyle_profile" parent="summaryLabelStyle">
+        <item name="android:textColor">@color/primaryDarkText</item>
+        <item name="android:textSize">@dimen/body_secondary_textSize</item>
+    </style>
+
+    <!-- Style for the labels of different sections in Profile Activity-->
+    <style name="profileLabelStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/marginMedium</item>
+        <item name="android:textColor">@color/primaryLightText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/title_textSize</item>
+    </style>
+
+    <!-- Style for the empty data texts-->
+    <style name="emptyTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/primaryLightText</item>
+        <item name="android:textSize">@dimen/body_textSize</item>
+    </style>
+
+    <!-- Style for the text inside the stats bar-->
+    <style name="statsBarLabelTextStyle">
+        <item name="android:layout_height">@dimen/statsBarHeight</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/body_secondary_textSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for the values of the stats bar-->
+    <style name="statsBarValueStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/lato</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/title_textSize</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

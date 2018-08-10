@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Margins-->
+    <dimen name="marginMini">4dp</dimen>
+    <dimen name="marginSmall">8dp</dimen>
+    <dimen name="marginMedium">12dp</dimen>
+    <dimen name="marginBig">20dp</dimen>
+    <dimen name="bigSeparation">50dp</dimen>
+
+    <!--Text size-->
+    <dimen name="headline_textSize">48sp</dimen>
+    <dimen name="display_big_textSize">40sp</dimen>
+    <dimen name="display_textSize">24sp</dimen>
+    <dimen name="title_textSize">20sp</dimen>
+    <dimen name="body_textSize">16sp</dimen>
+    <dimen name="body_secondary_textSize">14sp</dimen>
+
+    <dimen name="corner_radius">8dp</dimen>
+    <dimen name="topic_icon_size">80dp</dimen>
+    <dimen name="topic_icon_size_detail">90dp</dimen>
+    <dimen name="circular_view_size">200dp</dimen>
+    <dimen name="arc_width">12dp</dimen>
+    <dimen name="summary_separation">4dp</dimen>
+    <dimen name="circleImageDimen">80dp</dimen>
+    <dimen name="statsBarHeight">20dp</dimen>
+    <dimen name="pieChartSize">90dp</dimen>
+</resources>

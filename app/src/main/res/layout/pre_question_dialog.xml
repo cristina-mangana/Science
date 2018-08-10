@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topic_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/corner_radius"
+    tools:cardBackgroundColor="@color/colorTopicGeneral">
+
+    <ImageView
+        android:id="@+id/close_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="@dimen/marginSmall"
+        android:contentDescription="@string/close_button_ct"
+        android:src="@drawable/ic_close"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/marginMedium">
+
+        <ImageView
+            android:id="@+id/iv_topic_image"
+            android:layout_width="@dimen/topic_icon_size_detail"
+            android:layout_height="@dimen/topic_icon_size_detail"
+            android:contentDescription="@string/topic_image_ct"
+            tools:src="@drawable/ic_general" />
+
+        <TextView
+            android:id="@+id/tv_topic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textColor="@color/secondaryDarkText"
+            android:textSize="@dimen/title_textSize"
+            android:textStyle="bold"
+            tools:text="@string/general_label" />
+
+        <TextView
+            android:id="@+id/topic_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/body_secondary_textSize"
+            android:textStyle="italic"
+            tools:text="@string/general_subtitle"/>
+
+        <!--TODO
+        <NumberPicker
+            android:id="@+id/difficulty_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMedium" />-->
+
+        <!-- TODO: check changing tint programmatically, else
+        https://www.journaldev.com/19911/android-material-design-button-style-design-->
+        <Button
+            android:id="@+id/play_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:backgroundTint="@color/colorTopicAnimals"
+            android:text="@string/play_button" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -2,17 +2,17 @@
 <font-family xmlns:app="http://schemas.android.com/apk/res-auto">
     <!--normal-->
     <font
-        app:font="@font/GlacialIndifference_Regular"
+        app:font="@font/glacialindifference_regular"
         app:fontStyle="normal"
         app:fontWeight="400" />
     <!--italic-->
     <font
-        app:font="@font/GlacialIndifference_Italic"
+        app:font="@font/glacialindifference_italic"
         app:fontStyle="italic"
         app:fontWeight="400" />
     <!--bold-->
     <font
-        app:font="@font/GlacialIndifference_Bold"
+        app:font="@font/glacialindifference_bold"
         app:fontStyle="normal"
         app:fontWeight="700" />
 </font-family>
