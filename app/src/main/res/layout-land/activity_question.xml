@@ -8,39 +8,43 @@
     android:orientation="vertical"
     tools:context=".ui.QuestionActivity">
 
-    <TextView
-        android:id="@+id/tv_number_of_questions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/marginBig"
-        android:fontFamily="@font/lato"
-        android:textColor="@color/primaryLightText"
-        android:textSize="@dimen/headline_textSize"
-        tools:text="@string/correct_placeholder" />
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/tv_question"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="@dimen/marginBig"
-        android:layout_marginStart="@dimen/marginBig"
+        android:layout_margin="@dimen/marginBig"
         android:layout_weight="1"
-        android:gravity="center"
-        android:textColor="@color/primaryLightText"
-        app:autoSizeMaxTextSize="@dimen/display_big_textSize"
-        app:autoSizeTextType="uniform"
-        tools:text="@string/question_placeholder" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_number_of_questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/lato"
+            android:textColor="@color/primaryLightText"
+            android:textSize="@dimen/headline_textSize"
+            tools:text="@string/correct_placeholder" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/marginBig"
+            android:gravity="center"
+            android:textColor="@color/primaryLightText"
+            app:autoSizeMaxTextSize="@dimen/display_big_textSize"
+            app:autoSizeTextType="uniform"
+            tools:text="@string/question_placeholder" />
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_answers_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="@dimen/marginBig"
+        android:layout_marginBottom="@dimen/marginSmall"
         android:layout_marginEnd="@dimen/marginSmall"
         android:layout_marginStart="@dimen/marginSmall"
-        android:layout_marginTop="@dimen/marginBig"
         android:layout_weight="1" />
 
     <ProgressBar

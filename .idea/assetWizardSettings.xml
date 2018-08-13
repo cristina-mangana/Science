@@ -78,8 +78,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_user" />
-                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\ic_user_new2.svg" />
+                            <entry key="outputName" value="ic_right" />
+                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\round-chevron_right-24px.svg" />
                           </map>
                         </option>
                       </PersistentState>

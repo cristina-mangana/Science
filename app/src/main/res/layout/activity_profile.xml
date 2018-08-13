@@ -90,10 +90,7 @@
                         android:text="@string/games_label" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="@dimen/summary_separation"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparentDark" />
+                <View style="@style/summarySeparatorStyle" />
 
                 <LinearLayout style="@style/summaryLayoutProfileStyle">
 
@@ -107,10 +104,7 @@
                         android:text="@string/correct_label" />
                 </LinearLayout>
 
-                <View
-                    android:layout_width="@dimen/summary_separation"
-                    android:layout_height="match_parent"
-                    android:background="@color/transparentDark" />
+                <View style="@style/summarySeparatorStyle" />
 
                 <LinearLayout style="@style/summaryLayoutProfileStyle">
 

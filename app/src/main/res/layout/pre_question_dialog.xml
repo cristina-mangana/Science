@@ -3,19 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/topic_card"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     app:cardCornerRadius="@dimen/corner_radius"
     tools:cardBackgroundColor="@color/colorTopicGeneral">
 
-    <ImageView
-        android:id="@+id/close_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:layout_margin="@dimen/marginSmall"
-        android:contentDescription="@string/close_button_ct"
-        android:src="@drawable/ic_close"/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,6 +25,7 @@
             android:id="@+id/iv_topic_image"
             android:layout_width="@dimen/topic_icon_size_detail"
             android:layout_height="@dimen/topic_icon_size_detail"
+            android:layout_marginTop="@dimen/marginMedium"
             android:contentDescription="@string/topic_image_ct"
             tools:src="@drawable/ic_general" />
 
@@ -44,27 +42,55 @@
             tools:text="@string/general_label" />
 
         <TextView
-            android:id="@+id/topic_subtitle"
+            android:id="@+id/tv_topic_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/body_secondary_textSize"
+            android:layout_marginTop="@dimen/marginMini"
+            android:gravity="center_horizontal"
+            android:textColor="@color/hintDarkText"
+            android:textSize="@dimen/body_textSize"
             android:textStyle="italic"
-            tools:text="@string/general_subtitle"/>
+            tools:text="@string/general_subtitle" />
 
-        <!--TODO
-        <NumberPicker
-            android:id="@+id/difficulty_picker"
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginMedium" />-->
+            android:layout_height="wrap_content">
 
-        <!-- TODO: check changing tint programmatically, else
-        https://www.journaldev.com/19911/android-material-design-button-style-design-->
-        <Button
-            android:id="@+id/play_button"
+            <com.shawnlin.numberpicker.NumberPicker
+                android:id="@+id/difficulty_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginMedium"
+                app:np_dividerDistance="@dimen/pickerDivider"
+                app:np_fadingEdgeEnabled="true"
+                app:np_orientation="horizontal"
+                app:np_selectedTextColor="@color/primaryDarkText"
+                app:np_selectedTextSize="@dimen/body_textSize"
+                app:np_textColor="@color/secondaryDarkText"
+                app:np_textSize="@dimen/body_secondary_textSize" />
+        </FrameLayout>
+
+        <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:backgroundTint="@color/colorTopicAnimals"
-            android:text="@string/play_button" />
+            android:layout_height="wrap_content">
+
+            <!-- Loading indicator is only shown when questions are loading -->
+            <ProgressBar
+                android:id="@+id/loading_spinner"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/play_button"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/play_button"
+                android:textAllCaps="true"
+                tools:backgroundTint="@color/colorTopicAnimals" />
+        </FrameLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>

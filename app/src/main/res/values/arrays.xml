@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Topic names-->
+    <string-array name="topic_names">
+        <item>@string/general_label</item>
+        <item>@string/maths_label</item>
+        <item>@string/computers_label</item>
+        <item>@string/animals_label</item>
+    </string-array>
+
+    <!-- Topic subtitles-->
+    <string-array name="topic_subtitles">
+        <item>@string/general_subtitle</item>
+        <item>@string/maths_subtitle</item>
+        <item>@string/computers_subtitle</item>
+        <item>@string/animals_subtitle</item>
+    </string-array>
+
+    <!-- Topic colors-->
+    <integer-array name="topic_colors">
+        <item>@color/colorTopicGeneral</item>
+        <item>@color/colorTopicMaths</item>
+        <item>@color/colorTopicComputers</item>
+        <item>@color/colorTopicAnimals</item>
+    </integer-array>
+
+    <!-- Topic complementary colors-->
+    <integer-array name="topic_colors_button">
+        <item>@color/colorTopicAnimals</item>
+        <item>@color/colorTopicGeneral</item>
+        <item>@color/colorTopicMaths</item>
+        <item>@color/colorTopicComputers</item>
+    </integer-array>
+
+    <!-- Topic complementary colors - pressed-->
+    <integer-array name="topic_colors_button_pressed">
+        <item>@color/transparentDarkAnimals</item>
+        <item>@color/transparentDark</item>
+        <item>@color/transparentDarkMaths</item>
+        <item>@color/transparentDarkComputers</item>
+    </integer-array>
+
+    <!-- Topic icons-->
+    <integer-array name="topic_icons">
+        <item>@drawable/ic_general</item>
+        <item>@drawable/ic_maths</item>
+        <item>@drawable/ic_computers</item>
+        <item>@drawable/ic_animals</item>
+    </integer-array>
+
+    <!-- Difficulty levels-->
+    <string-array name="difficulty_levels">
+        <item>@string/easy_level</item>
+        <item>@string/medium_level</item>
+        <item>@string/hard_level</item>
+    </string-array>
+</resources>

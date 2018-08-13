@@ -1,140 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:circleview="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    tools:context=".ui.ResultsActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/finish"
-        android:textColor="@color/primaryLightText"
-        android:textSize="@dimen/display_big_textSize" />
-
-    <rjsv.circularview.CircleView
-        android:id="@+id/circle_view"
-        android:layout_width="@dimen/circular_view_size"
-        android:layout_height="@dimen/circular_view_size"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="@dimen/marginMedium"
-        android:contentDescription="@string/results_chart_ct"
-        circleview:arcColor="@color/transparentDark"
-        circleview:arcWidth="@dimen/arc_width"
-        circleview:enabled="false"
-        circleview:hasIndicator="false"
-        circleview:progressColor="@color/colorAccent"
-        circleview:progressMaximumValue="100"
-        circleview:progressMinimumValue="0"
-        circleview:progressStepAsInteger="true"
-        circleview:progressStepValue="1"
-        circleview:progressWidth="@dimen/arc_width"
-        circleview:suffixEnabled="true"
-        circleview:suffixValue="%"
-        circleview:textColor="@color/primaryLightText"
-        circleview:textSize="@dimen/headline_textSize"
-        tools:progressCurrentValue="60" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/score"
-        android:textColor="@color/primaryLightText"
-        android:textSize="@dimen/display_textSize" />
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/marginMedium"
-        android:baselineAligned="false"
-        android:orientation="horizontal">
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        tools:context=".ui.ResultsActivity">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginSmall"
-            android:layout_weight="1"
-            android:orientation="vertical">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark" />
 
-            <TextView
-                android:id="@+id/tv_number_of_correct"
-                style="@style/summaryTextStyle"
-                tools:text="@string/correct_placeholder" />
-
-            <TextView
-                style="@style/summaryLabelStyle"
-                android:text="@string/correct_label" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginSmall"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_time_left"
-                style="@style/summaryTextStyle"
-                tools:text="@string/time_placeholder" />
-
-            <TextView
-                style="@style/summaryLabelStyle"
-                android:text="@string/time_label" />
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/marginSmall"
-            android:orientation="vertical">
+            android:layout_gravity="center_horizontal"
+            android:text="@string/finish"
+            android:textColor="@color/primaryLightText"
+            android:textSize="@dimen/display_big_textSize" />
 
-            <TextView
-                android:id="@+id/tv_points"
-                style="@style/summaryTextStyle"
-                tools:text="@string/points_placeholder" />
+        <rjsv.circularview.CircleView
+            android:id="@+id/circle_view"
+            android:layout_width="@dimen/circular_view_size"
+            android:layout_height="@dimen/circular_view_size"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/marginMedium"
+            android:contentDescription="@string/results_chart_ct"
+            android:textAlignment="center"
+            circleview:arcColor="@color/transparentDarkAnimals"
+            circleview:arcWidth="@dimen/arc_width"
+            circleview:enabled="false"
+            circleview:hasIndicator="false"
+            circleview:progressColor="@color/colorTopicAnimals"
+            circleview:progressMaximumValue="100"
+            circleview:progressMinimumValue="0"
+            circleview:progressStepAsInteger="true"
+            circleview:progressStepValue="1"
+            circleview:progressWidth="@dimen/arc_width"
+            circleview:suffixEnabled="true"
+            circleview:suffixValue="%"
+            circleview:textColor="@color/primaryLightText"
+            circleview:textSize="@dimen/headline_textSize"
+            tools:progressCurrentValue="60" />
 
-            <TextView
-                style="@style/summaryLabelStyle"
-                android:text="@string/points_label" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/marginSmall"
+            android:text="@string/score"
+            android:textColor="@color/primaryLightText"
+            android:textSize="@dimen/display_textSize" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMedium"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginSmall"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_number_of_correct"
+                    style="@style/summaryTextStyle"
+                    tools:text="@string/correct_placeholder" />
+
+                <TextView
+                    style="@style/summaryLabelStyle"
+                    android:text="@string/correct_label" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginSmall"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_time_left"
+                    style="@style/summaryTextStyle"
+                    tools:text="@string/time_placeholder" />
+
+                <TextView
+                    style="@style/summaryLabelStyle"
+                    android:text="@string/time_label" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginSmall"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_points"
+                    style="@style/summaryTextStyle"
+                    tools:text="@string/points_placeholder" />
+
+                <TextView
+                    style="@style/summaryLabelStyle"
+                    android:text="@string/points_label" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/marginBig"
+            android:gravity="center_horizontal|bottom">
+
+            <Button
+                android:id="@+id/share_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:layout_weight="1"
+                android:text="@string/share_button" />
+
+            <Button
+                android:id="@+id/play_again_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:layout_weight="1"
+                android:text="@string/play_again_button" />
         </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="@dimen/marginBig"
-        android:gravity="center_horizontal|bottom">
-
-        <Button
-            android:id="@+id/share_button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/marginBig"
-            android:layout_marginStart="@dimen/marginBig"
-            android:layout_weight="1"
-            android:text="@string/share_button" />
-
-        <Button
-            android:id="@+id/play_again_button"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/marginBig"
-            android:layout_marginStart="@dimen/marginBig"
-            android:layout_weight="1"
-            android:text="@string/play_again_button" />
-    </LinearLayout>
-</LinearLayout>
+</ScrollView>

@@ -13,12 +13,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.Socket;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * Created by Cristina on 09/08/2018.
@@ -80,16 +86,16 @@ public class QueryUtils {
             return jsonResponse;
         }
 
-        HttpURLConnection urlConnection = null;
+        HttpsURLConnection urlConnection = null;
         InputStream inputStream = null;
         try {
-            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection = (HttpsURLConnection) url.openConnection();
+            urlConnection.setSSLSocketFactory(new MySSLSocketFactory(urlConnection.getSSLSocketFactory()));
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
-            // TODO check response code
             // If the request was successful (response code 200),
             // then read the input stream and parse the response.
             if (urlConnection.getResponseCode() == 200) {
@@ -134,6 +140,9 @@ public class QueryUtils {
      * Return a list of {@link Question} objects that has been built up from parsing a JSON response.
      */
     private static List<Question> extractListDataFromJson(String stringJSON) {
+        /* Key value for the "response_code" integer.*/
+        final String RESPONSE_CODE_KEY = "response_code";
+
         /* Key value for the "results" array.*/
         final String RESULTS_KEY = "results";
 
@@ -155,6 +164,26 @@ public class QueryUtils {
         List<Question> questions = new ArrayList<>();
         try {
             JSONObject response = new JSONObject(stringJSON);
+            // Check the response code
+            if (response.has(RESPONSE_CODE_KEY)) {
+                switch (response.getInt(RESPONSE_CODE_KEY)) {
+                    case 0:
+                        Log.d(LOG_TAG, "Returned results successfully");
+                        break;
+                    case 1:
+                        Log.d(LOG_TAG, "The API doesn't have enough questions for the query");
+                        break;
+                    case 2:
+                        Log.d(LOG_TAG, "Query contains an invalid parameter");
+                        break;
+                    case 3:
+                        Log.d(LOG_TAG, "Session Token does not exist");
+                        break;
+                    case 4:
+                        Log.d(LOG_TAG, "Session Token has returned all questions");
+                        break;
+                }
+            }
             if (response.has(RESULTS_KEY)) {
                 JSONArray results = response.getJSONArray(RESULTS_KEY);
                 // Loop through each feature in the array
@@ -182,7 +211,7 @@ public class QueryUtils {
                         JSONArray incorrectAnswers = questionObject.getJSONArray(INCORRECT_KEY);
                         List<String> incorrectArray = new ArrayList<>();
                         for (int j = 0; j < incorrectAnswers.length(); j++) {
-                            incorrectArray.add(incorrectAnswers.getString(i));
+                            incorrectArray.add(incorrectAnswers.getString(j));
                         }
                         question.setIncorrectAnswers(incorrectArray);
                     }
@@ -196,5 +225,63 @@ public class QueryUtils {
 
         // Return the list of questions
         return questions;
+    }
+
+    // Enable TSL 1.2: https://tinyurl.com/yd2k4jyg
+    public static class MySSLSocketFactory extends SSLSocketFactory {
+
+        SSLSocketFactory sslSocketFactory;
+
+        public MySSLSocketFactory(SSLSocketFactory sslSocketFactory) {
+            super();
+            this.sslSocketFactory = sslSocketFactory;
+        }
+
+        @Override
+        public String[] getDefaultCipherSuites() {
+            return sslSocketFactory.getDefaultCipherSuites();
+        }
+
+        @Override
+        public String[] getSupportedCipherSuites() {
+            return sslSocketFactory.getSupportedCipherSuites();
+        }
+
+        @Override
+        public SSLSocket createSocket(Socket s, String host, int port, boolean autoClose) throws IOException {
+            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(s, host, port, autoClose);
+            socket.setEnabledProtocols(new String[]{"TLSv1.2"});
+            return socket;
+        }
+
+        @Override
+        public Socket createSocket(String host, int port) throws IOException, UnknownHostException {
+            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(host, port);
+            socket.setEnabledProtocols(new String[]{"TLSv1.2"});
+            return socket;
+        }
+
+        @Override
+        public Socket createSocket(String host, int port, InetAddress localHost, int localPort) throws IOException,
+                UnknownHostException {
+            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(host, port, localHost, localPort);
+            socket.setEnabledProtocols(new String[]{"TLSv1.2"});
+            return socket;
+        }
+
+        @Override
+        public Socket createSocket(InetAddress host, int port) throws IOException {
+            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(host, port);
+            socket.setEnabledProtocols(new String[]{"TLSv1.2"});
+            return socket;
+        }
+
+        @Override
+        public Socket createSocket(InetAddress address, int port, InetAddress localAddress, int localPort)
+                throws IOException {
+            SSLSocket socket = (SSLSocket) sslSocketFactory.createSocket(address, port, localAddress, localPort);
+            socket.setEnabledProtocols(new String[]{"TLSv1.2"});
+            return socket;
+        }
     }
 }

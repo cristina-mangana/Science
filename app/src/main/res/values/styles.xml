@@ -91,4 +91,11 @@
         <item name="android:textSize">@dimen/title_textSize</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <!-- Style for the separator view in the stats bar-->
+    <style name="summarySeparatorStyle">
+        <item name="android:layout_width">@dimen/summary_separation</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/hintDarkText</item>
+    </style>
 </resources>

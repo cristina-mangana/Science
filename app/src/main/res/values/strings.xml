@@ -24,7 +24,7 @@
     <string name="computers_subtitle">&lt;div&gt;Q: How do you annoy a web developer?&lt;/span&gt;</string>
     <string name="animals_subtitle">Where do orcas hear music? Orca-stras!</string>
 
-    <!-- DIFFICULTY LEVELS [CHAR LIMIT = 15]-->
+    <!-- DIFFICULTY LEVELS [CHAR LIMIT = 6]-->
     <string name="easy_level">easy</string>
     <string name="medium_level">medium</string>
     <string name="hard_level">hard</string>
@@ -37,12 +37,18 @@
     <!-- QUESTION ACTIVITY -->
     <!-- Number of questions text -->
     <string name="questions_number_text" translatable="false">
-        <xliff.g example="1" id="current_question">%s</xliff.g>/
-        <xliff.g example="10" id="total_questions">%s</xliff.g></string>
+        <xliff.g example="1" id="current_question">%s</xliff.g>/<xliff.g example="10" id="total_questions">%s</xliff.g></string>
+    <!-- Dialog confirmation text [CHAR LIMIT = NONE]-->
+    <string name="want_close">Are you sure you want to quit? This action will remove the current
+        results</string>
+    <string name="yes">QUIT</string>
+    <string name="no">KEEP PLAYING</string>
 
     <!-- Error text [CHAR LIMIT = NONE]-->
     <string name="error">Oops! It seems that an error has occurred. Please check your Internet
     connection and come back in a while</string>
+    <string name="error_api">No questions can be recovered at this moment. Try again in a
+        while</string>
 
     <!-- RESULTS ACTIVITY -->
     <!-- Finish message [CHAR LIMIT = NONE]-->
@@ -55,6 +61,16 @@
     <string name="time_label">Time left</string>
     <!-- Points label [CHAR LIMIT = 15]-->
     <string name="points_label">Points</string>
+    <!-- Text for sharing [CHAR LIMIT = NONE]-->
+    <string name="shared_text">I have achieved <xliff.g example="250" id="points">%s</xliff.g>
+        points on <xliff.g example="Science!" id="app_name">%s</xliff.g></string>
+    <!-- Minutes text-->
+    <string name="minutes_zero" translatable="false">00:</string>
+    <string name="minutes_one" translatable="false">01:</string>
+    <string name="seconds_zero" translatable="false">00</string>
+    <!-- Time left text-->
+    <string name="time_left" translatable="false"><xliff.g example="00:" id="minutes">%s</xliff.g><xliff.g example="32" id="seconds">%s</xliff.g></string>
+
 
     <!-- PROFILE ACTIVITY -->
     <!-- Games label [CHAR LIMIT = 15]-->
@@ -99,8 +115,6 @@
     <string name="profile_picture_ct">Profile picture</string>
     <!-- Pie chart content description [CHAR LIMIT = NONE]-->
     <string name="pie_chart_ct">Pie chart showing the user stats</string>
-    <!-- Close button content description [CHAR LIMIT = NONE]-->
-    <string name="close_button_ct">Close button</string>
     <!-- Stats progress bar content description [CHAR LIMIT = NONE]-->
     <string name="stats_bar_ct">Progress bar showing the user stats</string>
     <!-- Close button content description [CHAR LIMIT = NONE]-->
@@ -110,6 +124,7 @@
     <!-- Badge content description [CHAR LIMIT = NONE]-->
     <string name="badge_ct">Badge image</string>
 
-    <!--ACTION BUTTON TITLES-->
+    <!-- ACTION BUTTON TITLES-->
     <string name="action_settings">Settings</string>
+    <string name="action_close">Close</string>
 </resources>

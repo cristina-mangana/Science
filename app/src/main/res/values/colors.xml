@@ -15,6 +15,13 @@
 
     <color name="transparentLight">#CCFF7AB0</color>
     <color name="transparentDark">#CCC60055</color>
+    <color name="transparentDarkMaths">#CC006782</color>
+    <color name="transparentDarkComputers">#CCC8AD35</color>
+    <color name="transparentDarkAnimals">#CC44B26C</color>
+
+    <!-- Answer colors-->
+    <color name="colorCorrect">@color/colorTopicAnimals</color>
+    <color name="colorIncorrect">@color/colorAccentDark</color>
 
     <!-- Text colors-->
     <color name="primaryLightText">#FFFFFF</color>
@@ -22,5 +29,5 @@
     <color name="hintLightText">#80FFFFFF</color>
     <color name="primaryDarkText">#D9000000</color>
     <color name="secondaryDarkText">#CC000000</color>
-    <color name="hintDarkText">#66000000</color>
+    <color name="hintDarkText">#80000000</color>
 </resources>

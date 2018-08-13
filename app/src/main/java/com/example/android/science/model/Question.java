@@ -1,5 +1,8 @@
 package com.example.android.science.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.List;
 
 /**
@@ -7,7 +10,7 @@ import java.util.List;
  * This POJO class represents a single trivia question. Each object has information about the
  * question, such as title, correct answer and incorrect answers.
  */
-public class Question {
+public class Question implements Parcelable {
     private String mQuestionTitle, mCorrectAnswer;
     private List<String> mIncorrectAnswers;
 
@@ -16,6 +19,26 @@ public class Question {
      */
     public Question() {
     }
+
+    // De-parcel object
+    protected Question(Parcel in) {
+        mQuestionTitle = in.readString();
+        mCorrectAnswer = in.readString();
+        mIncorrectAnswers = in.createStringArrayList();
+    }
+
+    // Creator
+    public static final Creator<Question> CREATOR = new Creator<Question>() {
+        @Override
+        public Question createFromParcel(Parcel in) {
+            return new Question(in);
+        }
+
+        @Override
+        public Question[] newArray(int size) {
+            return new Question[size];
+        }
+    };
 
     /**
      * Get the question title
@@ -59,5 +82,15 @@ public class Question {
         this.mIncorrectAnswers = incorrectAnswers;
     }
 
-    // TODO parcelable?
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(mQuestionTitle);
+        parcel.writeString(mCorrectAnswer);
+        parcel.writeStringList(mIncorrectAnswers);
+    }
 }
