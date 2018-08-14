@@ -67,7 +67,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_settings_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_visibility_off_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -77,9 +77,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_right" />
-                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\round-chevron_right-24px.svg" />
+                            <entry key="outputName" value="ic_visibility_off" />
+                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\ic_launcher.svg" />
                           </map>
                         </option>
                       </PersistentState>

@@ -3,8 +3,10 @@
     <string name="app_name" translatable="false">Science!</string>
 
     <!-- Facebook application ID and custom URL scheme-->
-    <string name="facebook_app_id">303503253558569</string>
-    <string name="fb_login_protocol_scheme">fb303503253558569</string>
+    <string name="facebook_application_id" translatable="false">303503253558569</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb303503253558569</string>
+    <!-- Google client ID-->
+    <string name="google_web_client_id" translatable="false">28642910361-hqet1gq1cir2dpo1p67c30ugto7iqiu3.apps.googleusercontent.com</string>
 
     <!-- MAIN ACTIVITY -->
     <!-- Choose a topic message [CHAR LIMIT = NONE]-->
@@ -71,7 +73,6 @@
     <!-- Time left text-->
     <string name="time_left" translatable="false"><xliff.g example="00:" id="minutes">%s</xliff.g><xliff.g example="32" id="seconds">%s</xliff.g></string>
 
-
     <!-- PROFILE ACTIVITY -->
     <!-- Games label [CHAR LIMIT = 15]-->
     <string name="games_label">Games</string>
@@ -87,6 +88,53 @@
     <string name="no_data">Play a game to start developing your scientific skills!</string>
     <!-- No badges message [CHAR LIMIT = NONE]-->
     <string name="no_badges">You do not have any badges yet</string>
+    <!-- Dialogs confirmation text [CHAR LIMIT = NONE]-->
+    <string name="want_sign_out">Are you sure you want to sign out?</string>
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_no">NO</string>
+    <!-- Credits text [CHAR LIMIT = NONE]-->
+    <string name="credits">Science! questions are retrieved from the Oprn Trivia Db.\nAll icons were
+        made by Freepik from www.flaticon.com</string>
+    <string name="dialog_ok">OK</string>
+    <!-- Toast for sign out [CHAR LIMIT = NONE]-->
+    <string name="sign_out_toast">Log out successful</string>
+
+    <!-- SIGN IN ACTIVITY -->
+    <!-- Sign up label [CHAR LIMIT = NONE]-->
+    <string name="sign_up">Sign up to become a true scientist!</string>
+    <!-- Facebook login button [CHAR LIMIT = 30]-->
+    <string name="facebook_button">LOGIN WITH FACEBOOK</string>
+    <!-- Google login button [CHAR LIMIT = 30]-->
+    <string name="google_button">LOGIN WITH GOOGLE</string>
+    <!-- Email login button [CHAR LIMIT = 30]-->
+    <string name="email_button">LOGIN WITH EMAIL</string>
+    <!-- Sign in phrase 1 [CHAR LIMIT = NONE]-->
+    <string name="sign_in_1">Have an account?
+        <xliff.g example="Sign In!" id="sign_in_2">%s</xliff.g></string>
+    <!-- Sign in phrase 2 [CHAR LIMIT = NONE]-->
+    <string name="sign_in_2">Sign in!</string>
+    <!-- Sign up phrase 1 [CHAR LIMIT = NONE]-->
+    <string name="sign_up_account_1">Don\'t have an e-mail account?
+        <xliff.g example="Sign Up!" id="sign_up_account_2">%s</xliff.g></string>
+    <!-- Sign up phrase 2 [CHAR LIMIT = NONE]-->
+    <string name="sign_up_account_2">Sign up!</string>
+    <!-- Sign in button [CHAR LIMIT = NONE]-->
+    <string name="sign_in_button">SIGN IN</string>
+    <!-- Sign up button [CHAR LIMIT = NONE]-->
+    <string name="sign_up_button">SIGN UP</string>
+    <!-- EditText hints [CHAR LIMIT = 30]-->
+    <string name="username_hint">Username</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <!-- EditText errors [CHAR LIMIT = 30]-->
+    <string name="username_error">Username cannot be empty</string>
+    <string name="email_error">Email cannot be empty</string>
+    <string name="invalid_email_error">Invalid email</string>
+    <string name="password_error">Password cannot be empty</string>
+    <!-- Toast messages [CHAR LIMIT = NONE]-->
+    <string name="existing_email_message">User with this email already exist</string>
+    <string name="authentication_error">Authentication failed</string>
+    <string name="login_canceled">Login canceled</string>
 
     <!-- PLACEHOLDERS -->
     <!-- Question placeholder -->
@@ -121,10 +169,17 @@
     <string name="time_bar_ct">Progress bar showing the remaining time</string>
     <!-- Results chart content description [CHAR LIMIT = NONE]-->
     <string name="results_chart_ct">Chart showing the user results in percentage</string>
+    <!-- App logo content description [CHAR LIMIT = NONE]-->
+    <string name="app_logo_ct">App logo</string>
+    <!-- Visibility icon content description [CHAR LIMIT = NONE]-->
+    <string name="password_visibility_ct">Password visibility toggle</string>
     <!-- Badge content description [CHAR LIMIT = NONE]-->
     <string name="badge_ct">Badge image</string>
 
     <!-- ACTION BUTTON TITLES-->
     <string name="action_settings">Settings</string>
     <string name="action_close">Close</string>
+    <string name="sign_out">Sign out</string>
+    <string name="delete_account">Delete account</string>
+    <string name="app_credits">About Science!</string>
 </resources>

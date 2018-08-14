@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SignInActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/display_textSize"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_sign_up_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/marginBig"
+                android:gravity="center_horizontal"
+                android:text="@string/sign_up"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/sign_in_label_textSize"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/bigSeparation"
+                android:contentDescription="@string/app_logo_ct"
+                android:src="@drawable/ic_app" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/buttons_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/fb_button"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/marginSmall"
+                        android:drawableStart="@drawable/ic_facebook"
+                        android:text="@string/facebook_button"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorTopicMaths" />
+
+                    <Button
+                        android:id="@+id/google_button"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/marginSmall"
+                        android:drawableStart="@drawable/ic_google"
+                        android:text="@string/google_button"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/email_button"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_mail"
+                        android:text="@string/email_button"
+                        android:textColor="@color/secondaryDarkText"
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/colorTopicAnimals" />
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/loading_spinner"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|bottom"
+                android:padding="@dimen/marginMedium"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/body_textSize"
+                android:visibility="invisible"
+                tools:text="@string/sign_in_1" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

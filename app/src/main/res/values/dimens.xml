@@ -10,6 +10,7 @@
     <!--Text size-->
     <dimen name="headline_textSize">48sp</dimen>
     <dimen name="display_big_textSize">40sp</dimen>
+    <dimen name="sign_in_label_textSize">32sp</dimen>
     <dimen name="display_textSize">24sp</dimen>
     <dimen name="title_textSize">20sp</dimen>
     <dimen name="body_textSize">16sp</dimen>
