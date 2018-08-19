@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.science.R;
+import com.example.android.science.model.User;
+import com.example.android.science.utilities.DatabaseUtils;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -40,12 +43,22 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.MutableData;
+import com.google.firebase.database.Transaction;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.example.android.science.utilities.DatabaseUtils.USERS_REFERENCE;
 
 public class SignInActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)
@@ -62,6 +75,7 @@ public class SignInActivity extends AppCompatActivity {
     // Firebase variables
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mDatabase;
 
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN_GOOGLE = 9001;
@@ -74,6 +88,9 @@ public class SignInActivity extends AppCompatActivity {
     /* Boolean to track whether the loading indicator is visible or not*/
     private boolean isLoading = false;
     private static final String LOADING_KEY = "is_loading";
+
+    private static final String FACEBOOK_URL = "graph.facebook.com";
+    private static final String FACEBOOK_IMAGE_LARGE = "?type=large";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,13 +109,6 @@ public class SignInActivity extends AppCompatActivity {
             mLoadingIndicator.getIndeterminateDrawable()
                     .setColorFilter(ContextCompat.getColor(this, R.color.colorAccent),
                             android.graphics.PorterDuff.Mode.SRC_IN);
-        }
-
-        // Check Internet connection
-        if (!checkInternetConnection()) {
-            Toast.makeText(SignInActivity.this, getString(R.string.error),
-                    Toast.LENGTH_LONG).show();
-            finish();
         }
 
         // Initialize Authentication variables
@@ -161,6 +171,9 @@ public class SignInActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        // Initialize Firebase Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         if (savedInstanceState != null) {
             isLoading = savedInstanceState.getBoolean(LOADING_KEY);
@@ -331,6 +344,16 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void startApp() {
+        // Write the new user in the database
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String uid = user.getUid();
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            String photoUrl = String.valueOf(user.getPhotoUrl());
+            if (photoUrl.contains(FACEBOOK_URL)) photoUrl = photoUrl + FACEBOOK_IMAGE_LARGE;
+            writeNewUser(uid, name, email, photoUrl);
+        }
         // Start the app
         Intent openMainActivity = new Intent(getApplicationContext(), MainActivity.class);
         openMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -341,5 +364,40 @@ public class SignInActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBoolean(LOADING_KEY, isLoading);
+    }
+
+    /**
+     * Helper method to create new user node in the database
+     */
+    private void writeNewUser(final String userId, String username, String email, String photoUrl) {
+        Map<String, Integer> pointsByCategory = new HashMap<>();
+        for (int i = 0; i < DatabaseUtils.categoryNames.length; i++) {
+            pointsByCategory.put(DatabaseUtils.categoryNames[i], 0);
+        }
+        final User user = new User(username, email, "", photoUrl, 0,
+                0, 0, 0, pointsByCategory);
+
+        mDatabase.child(USERS_REFERENCE).child(userId).runTransaction(new Transaction.Handler() {
+            @Override
+            public Transaction.Result doTransaction(MutableData mutableData) {
+                if (mutableData.getValue() == null) {
+                    mutableData.setValue(userId);
+                    return Transaction.success(mutableData);
+                }
+                return Transaction.abort();
+            }
+
+            @Override
+            public void onComplete(@Nullable DatabaseError databaseError, boolean commited,
+                                   @Nullable DataSnapshot dataSnapshot) {
+                if (commited) {
+                    // unique key saved
+                    mDatabase.child(USERS_REFERENCE).child(userId).setValue(user);
+                } else {
+                    // unique key already exists
+                    Log.d(LOG_TAG, "User with this key already exists");
+                }
+            }
+        });
     }
 }

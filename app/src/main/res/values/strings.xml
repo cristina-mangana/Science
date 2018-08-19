@@ -70,8 +70,13 @@
     <string name="minutes_zero" translatable="false">00:</string>
     <string name="minutes_one" translatable="false">01:</string>
     <string name="seconds_zero" translatable="false">00</string>
+    <string name="seconds_min" translatable="false">0<xliff.g example="6" id="seconds">%s</xliff.g></string>
     <!-- Time left text-->
     <string name="time_left" translatable="false"><xliff.g example="00:" id="minutes">%s</xliff.g><xliff.g example="32" id="seconds">%s</xliff.g></string>
+    <!-- Toasts text [CHAR LIMIT = NONE]-->
+    <string name="error_database">Oops! It seems that an error has occurred. Your results cannot be
+        saved at this moment</string>
+    <string name="database_loading">Managing formulas&#8230; Wait a moment</string>
 
     <!-- PROFILE ACTIVITY -->
     <!-- Games label [CHAR LIMIT = 15]-->
@@ -82,22 +87,31 @@
     <string name="stats_label">Stats</string>
     <!-- Topics label [CHAR LIMIT = 20]-->
     <string name="topics_label">Topics</string>
-    <!-- Badges label [CHAR LIMIT = 20]-->
-    <string name="badges_label">Badges</string>
     <!-- No data message [CHAR LIMIT = NONE]-->
     <string name="no_data">Play a game to start developing your scientific skills!</string>
-    <!-- No badges message [CHAR LIMIT = NONE]-->
-    <string name="no_badges">You do not have any badges yet</string>
     <!-- Dialogs confirmation text [CHAR LIMIT = NONE]-->
     <string name="want_sign_out">Are you sure you want to sign out?</string>
     <string name="dialog_yes">YES</string>
     <string name="dialog_no">NO</string>
     <!-- Credits text [CHAR LIMIT = NONE]-->
-    <string name="credits">Science! questions are retrieved from the Oprn Trivia Db.\nAll icons were
+    <string name="credits">Science! questions are retrieved from the Open Trivia Db.\nAll icons were
         made by Freepik from www.flaticon.com</string>
     <string name="dialog_ok">OK</string>
     <!-- Toast for sign out [CHAR LIMIT = NONE]-->
     <string name="sign_out_toast">Log out successful</string>
+    <!-- Toast error texts [CHAR LIMIT = NONE]-->
+    <string name="error_profile">Oops! It seems that an error has occurred. Your results cannot be
+        displayed at this moment</string>
+    <string name="permission_denied">This functionality is only available if you accept the proper
+        permissions</string>
+    <string name="error_internet_profile">Oops! It seems that an error has occurred. Your results
+        cannot be displayed without Internet</string>
+    <!-- Percentage text-->
+    <string name="percentage" translatable="false"><xliff.g example="66" id="value">%s</xliff.g>%%</string>
+    <!-- Pie chart label [CHAR LIMIT = NONE]-->
+    <string name="pie_chart_label">Points by category</string>
+    <!-- Select picture title [CHAR LIMIT = 30]-->
+    <string name="select_picture">Select picture</string>
 
     <!-- SIGN IN ACTIVITY -->
     <!-- Sign up label [CHAR LIMIT = NONE]-->
@@ -154,13 +168,17 @@
     <string name="name_placeholder" translatable="false">Alfred Einstein</string>
     <!-- User nickname placeholder -->
     <string name="nickname_placeholder" translatable="false">Ada Lovelace
-        great-great-grandson</string>
+        great-great-grandchild</string>
 
     <!-- CONTENT DESCRIPTION -->
     <!-- Topic image content description [CHAR LIMIT = NONE]-->
     <string name="topic_image_ct">Image depicting the current topic</string>
     <!-- Profile picture content description [CHAR LIMIT = NONE]-->
     <string name="profile_picture_ct">Profile picture</string>
+    <!-- Add profile picture content description [CHAR LIMIT = NONE]-->
+    <string name="add_profile_picture_ct">Add profile picture</string>
+    <!-- Edit profile content description [CHAR LIMIT = NONE]-->
+    <string name="edit_profile_ct">Edit profile</string>
     <!-- Pie chart content description [CHAR LIMIT = NONE]-->
     <string name="pie_chart_ct">Pie chart showing the user stats</string>
     <!-- Stats progress bar content description [CHAR LIMIT = NONE]-->
@@ -173,8 +191,6 @@
     <string name="app_logo_ct">App logo</string>
     <!-- Visibility icon content description [CHAR LIMIT = NONE]-->
     <string name="password_visibility_ct">Password visibility toggle</string>
-    <!-- Badge content description [CHAR LIMIT = NONE]-->
-    <string name="badge_ct">Badge image</string>
 
     <!-- ACTION BUTTON TITLES-->
     <string name="action_settings">Settings</string>
@@ -182,4 +198,6 @@
     <string name="sign_out">Sign out</string>
     <string name="delete_account">Delete account</string>
     <string name="app_credits">About Science!</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>

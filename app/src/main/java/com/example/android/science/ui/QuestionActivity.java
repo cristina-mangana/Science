@@ -30,6 +30,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import static com.example.android.science.ui.PreQuestionDialog.CATEGORY_KEY;
+
 public class QuestionActivity extends AppCompatActivity {
     private static final String LOG_TAG = QuestionActivity.class.getSimpleName();
 
@@ -57,6 +59,7 @@ public class QuestionActivity extends AppCompatActivity {
     private AlertDialog mDialog;
 
     private List<Question> mQuestions;
+    private String mCategoryName;
 
     /* Variables to track user's results. Time stored in milliseconds*/
     private int mNumberOfCorrects = 0;
@@ -91,6 +94,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         mQuestions = getIntent().getExtras()
                 .getParcelableArrayList(PreQuestionDialog.QUESTIONS_KEY);
+        mCategoryName = getIntent().getExtras().getString(CATEGORY_KEY);
 
         if (mQuestions.size() == 0) {
             showError();
@@ -216,6 +220,7 @@ public class QuestionActivity extends AppCompatActivity {
                     openResultsActivity.putExtra(CORRECT_KEY, mNumberOfCorrects);
                     openResultsActivity.putExtra(TIME_LEFT_KEY, mTimeLeft);
                     openResultsActivity.putExtra(POINTS_KEY, mPoints);
+                    openResultsActivity.putExtra(CATEGORY_KEY, mCategoryName);
                     startActivity(openResultsActivity);
                     finish();
                 }

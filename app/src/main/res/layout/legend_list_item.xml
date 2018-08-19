@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/legend_label"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/marginMini"
+    android:drawablePadding="@dimen/marginSmall"
+    android:drawableStart="@drawable/legend_drawable"
+    android:orientation="vertical"
+    android:textAllCaps="true"
+    android:textColor="@color/primaryLightText"
+    android:textSize="@dimen/body_textSize"
+    tools:text="@string/general_label" />

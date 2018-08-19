@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/stats_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
@@ -11,7 +12,6 @@
         style="@style/profileLabelStyle"
         android:text="@string/stats_label" />
 
-    <!--TODO remove hardcoded widths-->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/statsBarHeight">
@@ -25,7 +25,7 @@
             android:indeterminate="false"
             android:max="100"
             android:progressDrawable="@drawable/progress_bar_stats"
-            tools:progress="66" />
+            tools:progress="60" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,14 +35,14 @@
             <TextView
                 android:id="@+id/tv_correct_label"
                 style="@style/statsBarLabelTextStyle"
-                android:layout_width="225dp"
+                android:layout_width="wrap_content"
                 android:text="@string/correct_label"
                 android:textColor="@color/primaryDarkText" />
 
             <TextView
                 android:id="@+id/tv_incorrect_label"
                 style="@style/statsBarLabelTextStyle"
-                android:layout_width="115dp"
+                android:layout_width="wrap_content"
                 android:text="@string/incorrect_label"
                 android:textColor="@color/primaryLightText" />
         </LinearLayout>
@@ -58,45 +58,41 @@
         <TextView
             android:id="@+id/tv_correct_percentage"
             style="@style/statsBarValueStyle"
-            android:layout_width="225dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:textColor="@color/colorTopicAnimals"
             tools:text="@string/percentage_placeholder" />
 
         <TextView
             android:id="@+id/tv_incorrect_percentage"
             style="@style/statsBarValueStyle"
-            android:layout_width="115dp"
+            android:layout_width="wrap_content"
             android:textColor="@color/colorAccentDark"
             tools:text="@string/percentage_placeholder" />
     </LinearLayout>
 
     <TextView
         style="@style/profileLabelStyle"
+        android:layout_marginTop="@dimen/marginMedium"
         android:text="@string/topics_label" />
 
-    <com.github.mikephil.charting.charts.PieChart
-        android:id="@+id/topics_pie_chart"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/pieChartSize"
-        android:layout_marginBottom="@dimen/marginSmall"
-        android:contentDescription="@string/pie_chart_ct" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <TextView
-        style="@style/profileLabelStyle"
-        android:text="@string/badges_label" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/tv_empty_badges"
-            style="@style/emptyTextStyle"
-            android:text="@string/no_badges" />
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/topics_pie_chart"
+            android:layout_width="@dimen/pieChartSize"
+            android:layout_height="@dimen/pieChartSize"
+            android:layout_marginBottom="@dimen/marginSmall"
+            android:contentDescription="@string/pie_chart_ct" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_badges_list"
+            android:id="@+id/legend"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/marginMedium"/>
+    </LinearLayout>
 </LinearLayout>

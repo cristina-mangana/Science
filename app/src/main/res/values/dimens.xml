@@ -23,6 +23,14 @@
     <dimen name="summary_separation">2dp</dimen>
     <dimen name="circleImageDimen">80dp</dimen>
     <dimen name="statsBarHeight">20dp</dimen>
-    <dimen name="pieChartSize">90dp</dimen>
+    <dimen name="pieChartSize">180dp</dimen>
     <dimen name="pickerDivider">70dp</dimen>
+    <dimen name="legend_size">16dp</dimen>
+    <dimen name="legend_corner_radius">4dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
 </resources>

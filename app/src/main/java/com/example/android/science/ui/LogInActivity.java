@@ -26,6 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.science.R;
+import com.example.android.science.model.User;
+import com.example.android.science.utilities.DatabaseUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,13 +35,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 import static com.example.android.science.ui.SignInActivity.IS_NEW_LOGIN_MAIL_KEY;
+import static com.example.android.science.utilities.DatabaseUtils.USERS_REFERENCE;
 
 public class LogInActivity extends AppCompatActivity {
 
@@ -64,14 +71,15 @@ public class LogInActivity extends AppCompatActivity {
 
     private boolean isNewLogin;
 
-    // Firebase variable
+    // Firebase variables
     private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
 
     /* Boolean to track whether the loading indicator is visible or not*/
     private boolean isLoading = false;
 
     /* Boolean to track whether the password is visible or not*/
-    private boolean isVisible= false;
+    private boolean isVisible = false;
 
     private String mUsername;
 
@@ -93,8 +101,18 @@ public class LogInActivity extends AppCompatActivity {
         // Hide the title
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+        // Progress bar color: https://tinyurl.com/yatgcjmv
+        if (mLoadingIndicator.getIndeterminateDrawable() != null) {
+            mLoadingIndicator.getIndeterminateDrawable()
+                    .setColorFilter(ContextCompat.getColor(this, R.color.colorAccent),
+                            android.graphics.PorterDuff.Mode.SRC_IN);
+        }
+
         // Initialize Authentication variables
         mAuth = FirebaseAuth.getInstance();
+
+        // Initialize Firebase Database
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         isNewLogin = getIntent().getExtras().getBoolean(IS_NEW_LOGIN_MAIL_KEY);
         if (isNewLogin) {
@@ -214,24 +232,17 @@ public class LogInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success
                             Log.d(LOG_TAG, "createUserWithEmail:success");
-                            if (mUsername != null) {
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                        .setDisplayName(mUsername)
-                                        .build();
-                                if (user != null) {
-                                    user.updateProfile(profileUpdates)
-                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                @Override
-                                                public void onComplete(@NonNull Task<Void> task) {
-                                                    if (task.isSuccessful()) {
-                                                        Log.d(LOG_TAG, "User profile updated.");
-                                                    }
-                                                }
-                                            });
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                String uid = user.getUid();
+                                String name;
+                                if (mUsername != null) {
+                                    name = mUsername;
                                 } else {
-                                    Log.d(LOG_TAG, "Update fail.");
+                                    name = "";
                                 }
+                                String email = user.getEmail();
+                                writeNewUser(uid, name, email);
                             }
                             // Start the app
                             startApp();
@@ -279,7 +290,7 @@ public class LogInActivity extends AppCompatActivity {
                             isLoading = false;
                             // If sign in fails, display a message to the user.
                             Log.w(LOG_TAG, "signInWithEmail:failure", task.getException());
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException ) {
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 Toast.makeText(LogInActivity.this,
                                         task.getException().getMessage(),
                                         Toast.LENGTH_SHORT).show();
@@ -297,7 +308,7 @@ public class LogInActivity extends AppCompatActivity {
         // Start the app
         Intent openMainActivity = new Intent(getApplicationContext(),
                 MainActivity.class);
-        openMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        openMainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(openMainActivity);
     }
 
@@ -330,5 +341,19 @@ public class LogInActivity extends AppCompatActivity {
             savedInstanceState.putString(USERNAME_KEY, password);
         }
         savedInstanceState.putBoolean(VISIBILITY_KEY, isVisible);
+    }
+
+    /**
+     * Helper method to create new user node in the database
+     */
+    private void writeNewUser(String userId, String username, String email) {
+        Map<String, Integer> pointsByCategory = new HashMap<>();
+        for (int i = 0; i < DatabaseUtils.categoryNames.length; i++) {
+            pointsByCategory.put(DatabaseUtils.categoryNames[i], 0);
+        }
+        User user = new User(username, email, "", "", 0,
+                0, 0, 0, pointsByCategory);
+
+        mDatabase.child(USERS_REFERENCE).child(userId).setValue(user);
     }
 }

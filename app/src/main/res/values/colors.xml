@@ -13,6 +13,7 @@
     <color name="colorTopicComputers">#FEDF66</color>
     <color name="colorTopicAnimals">#79E59B</color>
 
+    <color name="transparentPrimary">#CC0C1014</color>
     <color name="transparentLight">#CCFF7AB0</color>
     <color name="transparentDark">#CCC60055</color>
     <color name="transparentDarkMaths">#CC006782</color>

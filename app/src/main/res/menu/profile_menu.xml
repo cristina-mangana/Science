@@ -3,16 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- "Settings" -->
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings"
-        android:title="@string/action_settings"
-        app:showAsAction="always">
-        <!-- Nested menus: https://tinyurl.com/y8bcdk56-->
-        <menu>
-            <item android:id="@+id/sign_out"
-                android:title="@string/sign_out" />
-            <item android:id="@+id/credits"
-                android:title="@string/app_credits" />
-        </menu>
-    </item>
+        android:id="@+id/sign_out"
+        android:title="@string/sign_out"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/credits"
+        android:title="@string/app_credits"
+        app:showAsAction="never" />
 </menu>

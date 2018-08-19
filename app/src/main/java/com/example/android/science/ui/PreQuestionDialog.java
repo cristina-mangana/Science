@@ -33,6 +33,7 @@ import android.widget.Toast;
 
 import com.example.android.science.R;
 import com.example.android.science.model.Question;
+import com.example.android.science.utilities.DatabaseUtils;
 import com.example.android.science.utilities.QueryUtils;
 
 import java.lang.ref.WeakReference;
@@ -54,12 +55,14 @@ public class PreQuestionDialog extends DialogFragment {
 
     private static final String POSITION_KEY = "position";
     public static final String QUESTIONS_KEY = "questions";
-    public static final String PICKER_KEY = "picker";
+    private static final String PICKER_KEY = "picker";
+    public static final String CATEGORY_KEY = "category";
 
     /* Request urls */
     private static final String BASE_URL = "https://opentdb.com/api.php?amount=10&category=";
     private String[] categoriesArray = {"17", "19", "18", "27"};
     private static String mCurrentCategory;
+    private static String mCurrentCategoryName;
     private static final String DIFFICULTY_PATH = "&difficulty=";
 
     // Binding views and resources
@@ -126,6 +129,7 @@ public class PreQuestionDialog extends DialogFragment {
 
         // Set category
         mCurrentCategory = categoriesArray[position];
+        mCurrentCategoryName = DatabaseUtils.categoryNames[position];
 
         // Set toolbar
         ((AppCompatActivity) getActivity()).setSupportActionBar(mToolbar);
@@ -273,6 +277,7 @@ public class PreQuestionDialog extends DialogFragment {
                     Intent openQuestionActivityIntent = new Intent(context, QuestionActivity.class);
                     openQuestionActivityIntent.putParcelableArrayListExtra(QUESTIONS_KEY,
                             (ArrayList<Question>) questions);
+                    openQuestionActivityIntent.putExtra(CATEGORY_KEY, mCurrentCategoryName);
                     context.startActivity(openQuestionActivityIntent);
                 }
                 dialogFragment.dismiss();
