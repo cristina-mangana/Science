@@ -48,6 +48,14 @@
         <item>@drawable/ic_animals</item>
     </integer-array>
 
+    <!-- Legend drawables-->
+    <integer-array name="legend_drawables">
+        <item>@drawable/legend_drawable</item>
+        <item>@drawable/legend_drawable_maths</item>
+        <item>@drawable/legend_drawable_computers</item>
+        <item>@drawable/legend_drawable_animals</item>
+    </integer-array>
+
     <!-- Difficulty levels-->
     <string-array name="difficulty_levels">
         <item>@string/easy_level</item>

@@ -4,7 +4,7 @@
 
     <item android:id="@android:id/background">
         <shape>
-            <solid android:color="@color/colorAccentDark" />
+            <solid android:color="@color/colorIncorrect" />
             <corners android:radius="@dimen/corner_radius" />
         </shape>
     </item>
@@ -12,7 +12,7 @@
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <solid android:color="@color/colorTopicAnimals" />
+                <solid android:color="@color/colorCorrect" />
                 <corners android:radius="@dimen/corner_radius" />
             </shape>
         </clip>

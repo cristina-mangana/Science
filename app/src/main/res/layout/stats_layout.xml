@@ -60,14 +60,14 @@
             style="@style/statsBarValueStyle"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:textColor="@color/colorTopicAnimals"
+            android:textColor="@color/colorCorrect"
             tools:text="@string/percentage_placeholder" />
 
         <TextView
             android:id="@+id/tv_incorrect_percentage"
             style="@style/statsBarValueStyle"
             android:layout_width="wrap_content"
-            android:textColor="@color/colorAccentDark"
+            android:textColor="@color/colorIncorrect"
             tools:text="@string/percentage_placeholder" />
     </LinearLayout>
 
@@ -85,7 +85,6 @@
             android:id="@+id/topics_pie_chart"
             android:layout_width="@dimen/pieChartSize"
             android:layout_height="@dimen/pieChartSize"
-            android:layout_marginBottom="@dimen/marginSmall"
             android:contentDescription="@string/pie_chart_ct" />
 
         <android.support.v7.widget.RecyclerView

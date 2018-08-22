@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="@color/colorTopicAnimals" />
+    <size android:width="@dimen/legend_size"
+        android:height="@dimen/legend_size"/>
+    <corners
+        android:bottomLeftRadius="@dimen/legend_corner_radius"
+        android:bottomRightRadius="@dimen/legend_corner_radius"
+        android:topLeftRadius="@dimen/legend_corner_radius"
+        android:topRightRadius="@dimen/legend_corner_radius" />
+</shape>

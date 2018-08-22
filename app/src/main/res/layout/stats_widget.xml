@@ -1,20 +1,153 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/transparentPrimary">
+    android:background="@drawable/widget_background"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/appwidget_text"
-        android:layout_width="wrap_content"
+        android:id="@+id/app_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="#09C"
-        android:contentDescription="@string/appwidget_text"
-        android:text="@string/appwidget_text"
-        android:textColor="#ffffff"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+        android:background="@color/colorAccent"
+        android:fontFamily="@font/lato"
+        android:gravity="center"
+        android:padding="@dimen/marginMini"
+        android:text="@string/app_name"
+        android:textColor="@color/primaryLightText"
+        android:textSize="@dimen/display_textSize"
+        android:textStyle="bold" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginMedium"
+        android:paddingTop="@dimen/marginSmall">
+
+        <TextView
+            android:id="@+id/tv_empty_stats"
+            style="@style/emptyTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/no_data"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/stats_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/stats_bar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/statsBarHeightWidget"
+                android:contentDescription="@string/stats_bar_ct"
+                android:indeterminate="false"
+                android:max="100"
+                android:progressDrawable="@drawable/progress_bar_stats"
+                tools:progress="60" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginMedium"
+                android:layout_marginTop="@dimen/marginMini"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/statsBarLabelTextStyle"
+                    android:layout_width="wrap_content"
+                    android:text="@string/correct_label"
+                    android:textColor="@color/colorCorrect"
+                    android:textSize="@dimen/widget_textSize" />
+
+                <TextView
+                    android:id="@+id/tv_correct_percentage"
+                    style="@style/statsBarValueStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorCorrect"
+                    android:textSize="@dimen/body_textSize"
+                    tools:text="@string/percentage_placeholder" />
+
+                <TextView
+                    style="@style/statsBarLabelTextStyle"
+                    android:layout_width="wrap_content"
+                    android:text="@string/incorrect_label"
+                    android:textColor="@color/colorIncorrect"
+                    android:textSize="@dimen/widget_textSize" />
+
+                <TextView
+                    android:id="@+id/tv_incorrect_percentage"
+                    style="@style/statsBarValueStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorIncorrect"
+                    android:textSize="@dimen/body_textSize"
+                    tools:text="@string/percentage_placeholder" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/previous_topic"
+                    style="@style/changeTopicWidgetStyle"
+                    android:contentDescription="@string/previous_topic_ct"
+                    android:src="@drawable/ic_navigate_before" />
+
+                <FrameLayout
+                    android:layout_width="@dimen/widgetBarSize"
+                    android:layout_height="@dimen/widgetBarSize"
+                    android:layout_marginEnd="@dimen/marginSmall"
+                    android:layout_marginStart="@dimen/marginSmall">
+
+                    <TextView
+                        android:id="@+id/tv_topic_points"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/marginSmall"
+                        android:textColor="@color/primaryLightText"
+                        android:textSize="@dimen/body_textSize"
+                        tools:text="@string/correct_placeholder" />
+
+                    <ProgressBar
+                        android:id="@+id/topics_bar"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="@dimen/widgetBarSize"
+                        android:layout_height="@dimen/widgetBarSize"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:progressDrawable="@drawable/circular_bar"
+                        android:secondaryProgress="100" />
+                </FrameLayout>
+
+                <ImageButton
+                    android:id="@+id/next_topic"
+                    style="@style/changeTopicWidgetStyle"
+                    android:contentDescription="@string/next_topic_ct"
+                    android:src="@drawable/ic_navigate_next" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/legend_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/marginMini"
+                android:drawablePadding="@dimen/marginSmall"
+                android:drawableStart="@drawable/legend_drawable"
+                android:textAllCaps="true"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/body_secondary_textSize"
+                tools:text="@string/general_label" />
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>
-<!-- TODO-->

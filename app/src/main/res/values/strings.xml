@@ -34,7 +34,7 @@
     <!-- BUTTONS [CHAR LIMIT = 15]-->
     <string name="play_button">Play</string>
     <string name="share_button">Share</string>
-    <string name="play_again_button">Play again</string>
+    <string name="see_stats_button">See stats</string>
 
     <!-- QUESTION ACTIVITY -->
     <!-- Number of questions text -->
@@ -191,6 +191,10 @@
     <string name="app_logo_ct">App logo</string>
     <!-- Visibility icon content description [CHAR LIMIT = NONE]-->
     <string name="password_visibility_ct">Password visibility toggle</string>
+    <!-- Previous topic button content description [CHAR LIMIT = NONE]-->
+    <string name="previous_topic_ct">Previous topic</string>
+    <!-- Next topic button icon content description [CHAR LIMIT = NONE]-->
+    <string name="next_topic_ct">Next topic</string>
 
     <!-- ACTION BUTTON TITLES-->
     <string name="action_settings">Settings</string>

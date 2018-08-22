@@ -79,8 +79,8 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_done" />
-                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\round-done-24px.svg" />
+                            <entry key="outputName" value="ic_navigate_next" />
+                            <entry key="sourceFile" value="C:\Users\Cristina\Documents\Estudos\Android\2_AND\App_Capstone\Icons\selected\round-navigate_next-24px.svg" />
                           </map>
                         </option>
                       </PersistentState>

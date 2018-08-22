@@ -2,6 +2,7 @@ package com.example.android.science.ui;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -184,9 +185,14 @@ public class ResultsActivity extends AppCompatActivity {
         startActivity(sendIntent);
     }
 
-    @OnClick(R.id.play_again_button)
-    public void playAgain() {
-        // TODO
+    @OnClick(R.id.see_stats_button)
+    public void seeStats() {
+        Intent openProfileActivityIntent = new Intent(this, ProfileActivity.class);
+        startActivity(openProfileActivityIntent);
+        // Activity transition for older devices
+        if (android.os.Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+            overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
+        }
         finish();
     }
 

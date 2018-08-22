@@ -18,7 +18,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.transition.Slide;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -252,41 +251,6 @@ public class ProfileActivity extends AppCompatActivity {
                         if (databaseUser.getNumberOfGames() == 0) {
                             showError(getString(R.string.no_data));
                         } else {
-                            // Calculate percentages
-                            int totalAnswers = correctAnswers + incorrectAnswers;
-                            int correctPercentage = (100 * correctAnswers / totalAnswers);
-                            Log.d("correct", String.valueOf(correctPercentage));
-                            int incorrectPercentage = 100 - correctPercentage;
-                            includedStatsLayout.statsBar.setProgress(correctPercentage);
-                            includedStatsLayout.correctPercentage
-                                    .setText(getString(R.string.percentage,
-                                            String.valueOf(correctPercentage)));
-                            includedStatsLayout.incorrectPercentage
-                                    .setText(getString(R.string.percentage,
-                                            String.valueOf(incorrectPercentage)));
-                            int totalWidth = includedStatsLayout.statsBar.getWidth();
-                            if (correctPercentage >= 90) {
-                                includedStatsLayout.incorrectLabel.setVisibility(View.INVISIBLE);
-                                includedStatsLayout.incorrectLabel
-                                        .setWidth((int) (0.1 * totalWidth));
-                                includedStatsLayout.correctLabel.setWidth((int) (0.9 * totalWidth));
-                                includedStatsLayout.incorrectPercentage
-                                        .setWidth((int) (0.1 * totalWidth));
-                            } else if (correctPercentage <= 10) {
-                                includedStatsLayout.correctLabel.setVisibility(View.INVISIBLE);
-                                includedStatsLayout.correctLabel.setWidth((int) (0.1 * totalWidth));
-                                includedStatsLayout.incorrectLabel
-                                        .setWidth((int) (0.9 * totalWidth));
-                                includedStatsLayout.incorrectPercentage
-                                        .setWidth((int) (0.9 * totalWidth));
-                            } else {
-                                includedStatsLayout.incorrectLabel
-                                        .setWidth(totalWidth * incorrectPercentage / 100);
-                                includedStatsLayout.correctLabel
-                                        .setWidth(totalWidth * correctPercentage / 100);
-                                includedStatsLayout.incorrectPercentage
-                                        .setWidth(totalWidth * incorrectPercentage / 100);
-                            }
                             // Set pie chart
                             Map<String, Integer> pointsByCategory = databaseUser.getPointsByCategory();
                             List<PieEntry> entries = new ArrayList<>();
@@ -320,6 +284,43 @@ public class ProfileActivity extends AppCompatActivity {
                             mLegend.setNestedScrollingEnabled(false);
                             // Animate
                             includedStatsLayout.topicsPieChart.animateXY(1000, 1000);
+
+                            // Calculate percentages
+                            int totalAnswers = correctAnswers + incorrectAnswers;
+                            int correctPercentage = (100 * correctAnswers / totalAnswers);
+                            int incorrectPercentage = 100 - correctPercentage;
+                            includedStatsLayout.statsBar.setProgress(correctPercentage);
+                            includedStatsLayout.correctPercentage
+                                    .setText(getString(R.string.percentage,
+                                            String.valueOf(correctPercentage)));
+                            includedStatsLayout.incorrectPercentage
+                                    .setText(getString(R.string.percentage,
+                                            String.valueOf(incorrectPercentage)));
+                            int totalWidth = includedStatsLayout.statsBar.getWidth();
+                            if (totalWidth == 0) totalWidth = (int) getResources()
+                                    .getDimension(R.dimen.statsBarDefaultWidth);
+                            if (correctPercentage >= 90) {
+                                includedStatsLayout.incorrectLabel.setVisibility(View.INVISIBLE);
+                                includedStatsLayout.incorrectLabel
+                                        .setWidth((int) (0.1 * totalWidth));
+                                includedStatsLayout.correctLabel.setWidth((int) (0.9 * totalWidth));
+                                includedStatsLayout.incorrectPercentage
+                                        .setWidth((int) (0.1 * totalWidth));
+                            } else if (correctPercentage <= 10) {
+                                includedStatsLayout.correctLabel.setVisibility(View.INVISIBLE);
+                                includedStatsLayout.correctLabel.setWidth((int) (0.1 * totalWidth));
+                                includedStatsLayout.incorrectLabel
+                                        .setWidth((int) (0.9 * totalWidth));
+                                includedStatsLayout.incorrectPercentage
+                                        .setWidth((int) (0.9 * totalWidth));
+                            } else {
+                                includedStatsLayout.incorrectLabel
+                                        .setWidth(totalWidth * incorrectPercentage / 100);
+                                includedStatsLayout.correctLabel
+                                        .setWidth(totalWidth * correctPercentage / 100);
+                                includedStatsLayout.incorrectPercentage
+                                        .setWidth(totalWidth * incorrectPercentage / 100);
+                            }
 
                             // Adjust visibility
                             mLoadingIndicator.setVisibility(View.GONE);

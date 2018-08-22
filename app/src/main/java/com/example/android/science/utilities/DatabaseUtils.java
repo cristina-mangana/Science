@@ -20,4 +20,8 @@ public class DatabaseUtils {
 
     public static final String[] categoryNames = {GENERAL_CATEGORY, MATHS_CATEGORY,
             COMPUTERS_CATEGORY, ANIMALS_CATEGORY};
+
+    /* Empty constructor to prevent creation of instances of this class */
+    private DatabaseUtils() {
+    }
 }

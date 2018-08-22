@@ -7,7 +7,6 @@
     android:layout_margin="@dimen/marginMini"
     android:drawablePadding="@dimen/marginSmall"
     android:drawableStart="@drawable/legend_drawable"
-    android:orientation="vertical"
     android:textAllCaps="true"
     android:textColor="@color/primaryLightText"
     android:textSize="@dimen/body_textSize"

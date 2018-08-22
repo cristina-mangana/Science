@@ -15,6 +15,7 @@
     <dimen name="title_textSize">20sp</dimen>
     <dimen name="body_textSize">16sp</dimen>
     <dimen name="body_secondary_textSize">14sp</dimen>
+    <dimen name="widget_textSize">12sp</dimen>
 
     <dimen name="corner_radius">8dp</dimen>
     <dimen name="topic_icon_size_detail">90dp</dimen>
@@ -27,6 +28,9 @@
     <dimen name="pickerDivider">70dp</dimen>
     <dimen name="legend_size">16dp</dimen>
     <dimen name="legend_corner_radius">4dp</dimen>
+    <dimen name="widgetBarSize">120dp</dimen>
+    <dimen name="statsBarHeightWidget">16dp</dimen>
+    <dimen name="statsBarDefaultWidth">300dp</dimen>
 
     <!--
 Refer to App Widget Documentation for margin information

@@ -98,4 +98,13 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/hintDarkText</item>
     </style>
+
+    <!-- Style for the buttons on the home screen widget-->
+    <style name="changeTopicWidgetStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:background">@drawable/visibility_toggle_drawable</item>
+        <item name="android:padding">@dimen/marginMini</item>
+    </style>
 </resources>

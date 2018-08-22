@@ -137,14 +137,14 @@
                 android:text="@string/share_button" />
 
             <Button
-                android:id="@+id/play_again_button"
+                android:id="@+id/see_stats_button"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/marginBig"
                 android:layout_marginStart="@dimen/marginBig"
                 android:layout_weight="1"
-                android:text="@string/play_again_button" />
+                android:text="@string/see_stats_button" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
