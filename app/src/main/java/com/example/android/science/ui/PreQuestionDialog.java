@@ -149,11 +149,13 @@ public class PreQuestionDialog extends DialogFragment {
 
         // Set button color. Help from https://tinyurl.com/ycwawljd
         int[][] states = new int[][]{
+                new int[]{android.R.attr.state_focused}, // focused
                 new int[]{android.R.attr.state_pressed}, // pressed
                 new int[]{android.R.attr.state_enabled, -android.R.attr.state_pressed}  // enabled
         };
 
         int[] colors = new int[]{
+                topicColorsComplementaryPressed[position],
                 topicColorsComplementaryPressed[position],
                 topicColorsComplementary[position]
         };

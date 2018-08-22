@@ -126,7 +126,7 @@
             android:layout_margin="@dimen/marginBig"
             android:gravity="center_horizontal|bottom">
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/share_button"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
@@ -134,9 +134,10 @@
                 android:layout_marginEnd="@dimen/marginBig"
                 android:layout_marginStart="@dimen/marginBig"
                 android:layout_weight="1"
-                android:text="@string/share_button" />
+                android:text="@string/share_button"
+                app:backgroundTint="@color/main_button_color_state_list" />
 
-            <Button
+            <android.support.v7.widget.AppCompatButton
                 android:id="@+id/see_stats_button"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="0dp"
@@ -144,7 +145,8 @@
                 android:layout_marginEnd="@dimen/marginBig"
                 android:layout_marginStart="@dimen/marginBig"
                 android:layout_weight="1"
-                android:text="@string/see_stats_button" />
+                android:text="@string/see_stats_button"
+                app:backgroundTint="@color/main_button_color_state_list" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

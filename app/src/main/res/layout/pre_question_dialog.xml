@@ -52,23 +52,22 @@
             android:textStyle="italic"
             tools:text="@string/general_subtitle" />
 
-        <FrameLayout
+        <com.shawnlin.numberpicker.NumberPicker
+            android:id="@+id/difficulty_picker"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <com.shawnlin.numberpicker.NumberPicker
-                android:id="@+id/difficulty_picker"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/marginMedium"
-                app:np_dividerDistance="@dimen/pickerDivider"
-                app:np_fadingEdgeEnabled="true"
-                app:np_orientation="horizontal"
-                app:np_selectedTextColor="@color/primaryDarkText"
-                app:np_selectedTextSize="@dimen/body_textSize"
-                app:np_textColor="@color/secondaryDarkText"
-                app:np_textSize="@dimen/body_secondary_textSize" />
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginMedium"
+            android:descendantFocusability="afterDescendants"
+            android:focusable="true"
+            android:nextFocusForward="@id/play_button"
+            android:nextFocusRight="@id/play_button"
+            app:np_dividerDistance="@dimen/pickerDivider"
+            app:np_fadingEdgeEnabled="true"
+            app:np_orientation="horizontal"
+            app:np_selectedTextColor="@color/primaryDarkText"
+            app:np_selectedTextSize="@dimen/body_textSize"
+            app:np_textColor="@color/secondaryDarkText"
+            app:np_textSize="@dimen/body_secondary_textSize" />
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -88,6 +87,8 @@
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:nextFocusLeft="@id/difficulty_picker"
+                android:nextFocusUp="@id/difficulty_picker"
                 android:text="@string/play_button"
                 android:textAllCaps="true"
                 tools:backgroundTint="@color/colorTopicAnimals" />

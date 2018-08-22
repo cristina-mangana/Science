@@ -39,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
+            android:descendantFocusability="beforeDescendants"
             android:orientation="vertical">
 
             <TextView
@@ -85,9 +86,9 @@
                         android:drawableStart="@drawable/ic_facebook"
                         android:text="@string/facebook_button"
                         android:textStyle="bold"
-                        app:backgroundTint="@color/colorTopicMaths" />
+                        app:backgroundTint="@color/fb_button_color_state_list" />
 
-                    <Button
+                    <android.support.v7.widget.AppCompatButton
                         android:id="@+id/google_button"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="match_parent"
@@ -95,7 +96,8 @@
                         android:layout_marginBottom="@dimen/marginSmall"
                         android:drawableStart="@drawable/ic_google"
                         android:text="@string/google_button"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:backgroundTint="@color/main_button_color_state_list" />
 
                     <android.support.v7.widget.AppCompatButton
                         android:id="@+id/email_button"
@@ -106,7 +108,7 @@
                         android:text="@string/email_button"
                         android:textColor="@color/secondaryDarkText"
                         android:textStyle="bold"
-                        app:backgroundTint="@color/colorTopicAnimals" />
+                        app:backgroundTint="@color/secondary_button_color_state_list" />
                 </LinearLayout>
 
                 <ProgressBar
@@ -121,6 +123,8 @@
                 android:id="@+id/tv_sign_in"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/focus_background_drawable"
+                android:focusable="true"
                 android:gravity="center_horizontal|bottom"
                 android:padding="@dimen/marginMedium"
                 android:textColor="@color/primaryLightText"

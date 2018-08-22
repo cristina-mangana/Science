@@ -11,6 +11,7 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -94,6 +95,8 @@
                         android:layout_marginStart="@dimen/marginSmall"
                         android:background="@drawable/visibility_toggle_drawable"
                         android:contentDescription="@string/edit_profile_ct"
+                        android:focusable="true"
+                        android:importantForAccessibility="yes"
                         android:src="@drawable/ic_edit"
                         android:visibility="gone" />
 
@@ -204,7 +207,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:descendantFocusability="blocksDescendants">
+            android:descendantFocusability="beforeDescendants">
 
             <!-- TextView for empty data cases-->
             <TextView

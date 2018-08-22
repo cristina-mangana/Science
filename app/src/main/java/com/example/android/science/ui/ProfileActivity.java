@@ -138,10 +138,8 @@ public class ProfileActivity extends AppCompatActivity {
         final IncludedLayout includedStatsLayout = new IncludedLayout();
         ButterKnife.bind(includedStatsLayout, mStatsLayout);
 
-        // TODO check Enter transition for newer devices
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Slide slide = new Slide(Gravity.BOTTOM);
-            // TODO need this? slide.addTarget();
             slide.setInterpolator(AnimationUtils.loadInterpolator(this,
                     android.R.interpolator.linear_out_slow_in));
             slide.setDuration(getResources().getInteger(R.integer.activity_transition_duration));
@@ -208,6 +206,7 @@ public class ProfileActivity extends AppCompatActivity {
                         String username = databaseUser.getUsername();
                         mUserNameTextView.setText(username);
                         mEditButton.setVisibility(View.VISIBLE);
+                        mEditButton.requestFocus();
                         mUserNameEditText.setHint(username);
                         mToolbarUsername.setText(username);
                         String nickname;
@@ -274,6 +273,7 @@ public class ProfileActivity extends AppCompatActivity {
                             includedStatsLayout.topicsPieChart.setHoleColor(ContextCompat
                                     .getColor(ProfileActivity.this, R.color.colorPrimary));
                             includedStatsLayout.topicsPieChart.setDrawEntryLabels(false);
+                            includedStatsLayout.topicsPieChart.getDescription().setEnabled(false);
                             // Set legend
                             Legend legend = includedStatsLayout.topicsPieChart.getLegend();
                             legend.setEnabled(false);
