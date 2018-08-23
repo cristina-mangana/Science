@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LogInActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorAccent"
+            app:layout_scrollFlags="enterAlways"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/lato"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/display_textSize"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/bigSeparation">
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:hint="@string/username_hint"
+                android:inputType="textPersonName"
+                android:textColor="@color/primaryLightText"
+                android:textColorHint="@color/hintLightText"
+                app:backgroundTint="@color/colorAccent" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginSmall"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/primaryLightText"
+                android:textColorHint="@color/hintLightText"
+                app:backgroundTint="@color/colorAccent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/marginBig"
+                android:layout_marginEnd="@dimen/marginBig"
+                android:layout_marginStart="@dimen/marginBig"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    android:nextFocusDown="@id/sign_button"
+                    android:textColor="@color/primaryLightText"
+                    android:textColorHint="@color/hintLightText"
+                    app:backgroundTint="@color/colorAccent" />
+
+                <ImageView
+                    android:id="@+id/visibility_toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/visibility_toggle_drawable"
+                    android:contentDescription="@string/password_visibility_ct"
+                    android:focusable="true"
+                    android:paddingEnd="@dimen/marginSmall"
+                    android:paddingStart="@dimen/marginSmall"
+                    android:src="@drawable/ic_visibility" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="@dimen/marginBig">
+
+                <ProgressBar
+                    android:id="@+id/loading_spinner"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/sign_button"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up_button"
+                    android:textColor="@color/secondaryDarkText"
+                    app:backgroundTint="@color/secondary_button_color_state_list" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/focus_background_drawable"
+                android:focusable="true"
+                android:gravity="center_horizontal|bottom"
+                android:padding="@dimen/marginMedium"
+                android:textColor="@color/primaryLightText"
+                android:textSize="@dimen/body_textSize"
+                tools:text="@string/sign_up_account_1" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
